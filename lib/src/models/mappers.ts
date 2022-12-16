@@ -1,5 +1,77 @@
 import * as coreClient from "@azure/core-client";
 
+export const GenerateTokenForAnyRequest: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "GenerateTokenForAnyRequest",
+    modelProperties: {
+      datasets: {
+        serializedName: "datasets",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Dictionary",
+              value: { type: { name: "any" } }
+            }
+          }
+        }
+      },
+      targetWorkspaces: {
+        serializedName: "targetWorkspaces",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Dictionary",
+              value: { type: { name: "any" } }
+            }
+          }
+        }
+      },
+      reports: {
+        serializedName: "reports",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Dictionary",
+              value: { type: { name: "any" } }
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const EmbedToken: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "EmbedToken",
+    modelProperties: {
+      token: {
+        serializedName: "token",
+        type: {
+          name: "String"
+        }
+      },
+      tokenId: {
+        serializedName: "tokenId",
+        type: {
+          name: "String"
+        }
+      },
+      expiration: {
+        serializedName: "expiration",
+        type: {
+          name: "DateTime"
+        }
+      }
+    }
+  }
+};
+
 export const ODataResponseListDataset: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -1017,33 +1089,6 @@ export const GenerateTokenRequest: coreClient.CompositeMapper = {
         serializedName: "datasetId",
         type: {
           name: "String"
-        }
-      }
-    }
-  }
-};
-
-export const EmbedToken: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "EmbedToken",
-    modelProperties: {
-      token: {
-        serializedName: "token",
-        type: {
-          name: "String"
-        }
-      },
-      tokenId: {
-        serializedName: "tokenId",
-        type: {
-          name: "String"
-        }
-      },
-      expiration: {
-        serializedName: "expiration",
-        type: {
-          name: "DateTime"
         }
       }
     }

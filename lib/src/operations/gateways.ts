@@ -279,7 +279,7 @@ const createDatasourceOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.datasourceToGatewayRequest,
   urlParameters: [Parameters.$host, Parameters.gatewayId],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -333,7 +333,7 @@ const updateDatasourceOperationSpec: coreClient.OperationSpec = {
     Parameters.gatewayId,
     Parameters.datasourceId
   ],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -387,7 +387,7 @@ const addDatasourceUserOperationSpec: coreClient.OperationSpec = {
     Parameters.gatewayId,
     Parameters.datasourceId
   ],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };

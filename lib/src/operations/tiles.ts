@@ -80,7 +80,7 @@ const generateTokenOperationSpec: coreClient.OperationSpec = {
     Parameters.dashboardKey,
     Parameters.tileKey
   ],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -100,7 +100,7 @@ const generateTokenInGroupOperationSpec: coreClient.OperationSpec = {
     Parameters.dashboardKey,
     Parameters.tileKey
   ],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };

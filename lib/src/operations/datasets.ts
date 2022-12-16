@@ -600,7 +600,7 @@ const postDatasetOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.dataset,
   urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -620,7 +620,7 @@ const postRowsOperationSpec: coreClient.OperationSpec = {
     Parameters.datasetKey,
     Parameters.tableName
   ],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -670,7 +670,7 @@ const putTableOperationSpec: coreClient.OperationSpec = {
     Parameters.datasetKey,
     Parameters.tableName
   ],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -762,7 +762,7 @@ const setAllConnectionsOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.parameters,
   urlParameters: [Parameters.$host, Parameters.datasetKey],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -778,7 +778,7 @@ const bindToGatewayOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.bindToGatewayRequest,
   urlParameters: [Parameters.$host, Parameters.datasetKey],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -811,7 +811,7 @@ const postDatasetInGroupOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.dataset,
   urlParameters: [Parameters.$host, Parameters.groupId],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -833,7 +833,7 @@ const postRowsInGroupOperationSpec: coreClient.OperationSpec = {
     Parameters.tableName,
     Parameters.groupId
   ],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -886,7 +886,7 @@ const putTableInGroupOperationSpec: coreClient.OperationSpec = {
     Parameters.tableName,
     Parameters.groupId
   ],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -980,7 +980,7 @@ const setAllConnectionsInGroupOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.parameters,
   urlParameters: [Parameters.$host, Parameters.datasetKey, Parameters.groupId],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -997,7 +997,7 @@ const bindToGatewayInGroupOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.bindToGatewayRequest,
   urlParameters: [Parameters.$host, Parameters.datasetKey, Parameters.groupId],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };

@@ -153,7 +153,7 @@ const postImportOperationSpec: coreClient.OperationSpec = {
   requestBody: Parameters.importInfo,
   queryParameters: [Parameters.datasetDisplayName, Parameters.nameConflict],
   urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -192,7 +192,7 @@ const postImportInGroupOperationSpec: coreClient.OperationSpec = {
   requestBody: Parameters.importInfo,
   queryParameters: [Parameters.datasetDisplayName, Parameters.nameConflict],
   urlParameters: [Parameters.$host, Parameters.groupId],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };

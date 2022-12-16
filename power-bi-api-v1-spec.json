@@ -9,6 +9,34 @@
   "consumes": [],
   "produces": ["application/json"],
   "paths": {
+    "/v1.0/myorg/GenerateToken": {
+      "post": {
+        "tags": ["Token"],
+        "summary": "Generate an embed token for specified datasets, reports or workspaces",
+        "operationId": "GenerateToken",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "requestBody",
+            "in": "body",
+            "description": "Request body for generating an embed token",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GenerateTokenForAnyRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/EmbedToken"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
     "/v1.0/myorg/datasets": {
       "get": {
         "tags": ["Datasets"],
@@ -3068,6 +3096,33 @@
         "datasetId": {
           "type": "string",
           "description": "The new dataset of the rebinded report"
+        }
+      }
+    },
+    "GenerateTokenForAnyRequest": {
+      "type": "object",
+      "description": "Power BI Generate Token Request",
+      "properties": {
+        "datasets": {
+          "type": "array",
+          "description": "Datasets",
+          "items": {
+            "$ref": "#/definitions/Object"
+          }
+        },
+        "targetWorkspaces": {
+          "type": "array",
+          "description": "Target workspaces",
+          "items": {
+            "$ref": "#/definitions/Object"
+          }
+        },
+        "reports": {
+          "type": "array",
+          "description": "Reports",
+          "items": {
+            "$ref": "#/definitions/Object"
+          }
         }
       }
     },

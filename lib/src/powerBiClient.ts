@@ -20,6 +20,9 @@ import * as Parameters from "./models/parameters";
 import * as Mappers from "./models/mappers";
 import {
   PowerBiClientOptionalParams,
+  GenerateTokenForAnyRequest,
+  GenerateTokenOptionalParams,
+  GenerateTokenResponse,
   GetGroupsOptionalParams,
   GetGroupsResponse
 } from "./models";
@@ -76,7 +79,7 @@ export class PowerBiClient extends coreClient.ServiceClient {
       });
       this.pipeline.addPolicy(
         coreRestPipeline.bearerTokenAuthenticationPolicy({
-          credential: options.credential,
+          credential: credentials,
           scopes:
             optionsWithDefaults.credentialScopes ??
             `${optionsWithDefaults.endpoint}/.default`,
@@ -99,6 +102,21 @@ export class PowerBiClient extends coreClient.ServiceClient {
   }
 
   /**
+   * Generate an embed token for specified datasets, reports or workspaces
+   * @param requestBody Request body for generating an embed token
+   * @param options The options parameters.
+   */
+  generateToken(
+    requestBody: GenerateTokenForAnyRequest,
+    options?: GenerateTokenOptionalParams
+  ): Promise<GenerateTokenResponse> {
+    return this.sendOperationRequest(
+      { requestBody, options },
+      generateTokenOperationSpec
+    );
+  }
+
+  /**
    * Returns a list of groups
    * @param options The options parameters.
    */
@@ -116,6 +134,20 @@ export class PowerBiClient extends coreClient.ServiceClient {
 // Operation Specifications
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
+const generateTokenOperationSpec: coreClient.OperationSpec = {
+  path: "/v1.0/myorg/GenerateToken",
+  httpMethod: "POST",
+  responses: {
+    200: {
+      bodyMapper: Mappers.EmbedToken
+    }
+  },
+  requestBody: Parameters.requestBody,
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.contentType, Parameters.accept],
+  mediaType: "json",
+  serializer
+};
 const getGroupsOperationSpec: coreClient.OperationSpec = {
   path: "/v1.0/myorg/groups",
   httpMethod: "GET",

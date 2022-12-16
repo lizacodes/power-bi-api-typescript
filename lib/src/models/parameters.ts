@@ -4,6 +4,7 @@ import {
   OperationQueryParameter
 } from "@azure/core-client";
 import {
+  GenerateTokenForAnyRequest as GenerateTokenForAnyRequestMapper,
   Dataset as DatasetMapper,
   SetAllDatasetConnectionsRequest as SetAllDatasetConnectionsRequestMapper,
   BindToGatewayRequest as BindToGatewayRequestMapper,
@@ -15,6 +16,23 @@ import {
   GenerateTokenRequest as GenerateTokenRequestMapper,
   RebindReportRequest as RebindReportRequestMapper
 } from "../models/mappers";
+
+export const contentType: OperationParameter = {
+  parameterPath: ["options", "contentType"],
+  mapper: {
+    defaultValue: "application/json",
+    isConstant: true,
+    serializedName: "Content-Type",
+    type: {
+      name: "String"
+    }
+  }
+};
+
+export const requestBody: OperationParameter = {
+  parameterPath: "requestBody",
+  mapper: GenerateTokenForAnyRequestMapper
+};
 
 export const accept: OperationParameter = {
   parameterPath: "accept",
@@ -38,18 +56,6 @@ export const $host: OperationURLParameter = {
     }
   },
   skipEncoding: true
-};
-
-export const contentType: OperationParameter = {
-  parameterPath: ["options", "contentType"],
-  mapper: {
-    defaultValue: "application/json",
-    isConstant: true,
-    serializedName: "Content-Type",
-    type: {
-      name: "String"
-    }
-  }
 };
 
 export const dataset: OperationParameter = {

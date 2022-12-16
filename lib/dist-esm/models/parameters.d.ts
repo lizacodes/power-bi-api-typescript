@@ -1,7 +1,8 @@
 import { OperationParameter, OperationURLParameter, OperationQueryParameter } from "@azure/core-client";
+export declare const contentType: OperationParameter;
+export declare const requestBody: OperationParameter;
 export declare const accept: OperationParameter;
 export declare const $host: OperationURLParameter;
-export declare const contentType: OperationParameter;
 export declare const dataset: OperationParameter;
 export declare const requestMessage: OperationParameter;
 export declare const datasetKey: OperationURLParameter;

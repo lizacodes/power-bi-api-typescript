@@ -1,6 +1,6 @@
 import * as coreClient from "@azure/core-client";
 import { Datasets, Gateways, Imports, Reports, Dashboards, Tiles } from "./operationsInterfaces";
-import { PowerBiClientOptionalParams, GetGroupsOptionalParams, GetGroupsResponse } from "./models";
+import { PowerBiClientOptionalParams, GenerateTokenForAnyRequest, GenerateTokenOptionalParams, GenerateTokenResponse, GetGroupsOptionalParams, GetGroupsResponse } from "./models";
 export declare class PowerBiClient extends coreClient.ServiceClient {
     $host: string;
     /**
@@ -8,6 +8,12 @@ export declare class PowerBiClient extends coreClient.ServiceClient {
      * @param options The parameter options
      */
     constructor(options?: PowerBiClientOptionalParams);
+    /**
+     * Generate an embed token for specified datasets, reports or workspaces
+     * @param requestBody Request body for generating an embed token
+     * @param options The options parameters.
+     */
+    generateToken(requestBody: GenerateTokenForAnyRequest, options?: GenerateTokenOptionalParams): Promise<GenerateTokenResponse>;
     /**
      * Returns a list of groups
      * @param options The options parameters.

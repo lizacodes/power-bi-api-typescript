@@ -1,4 +1,6 @@
 import * as coreClient from "@azure/core-client";
+export declare const GenerateTokenForAnyRequest: coreClient.CompositeMapper;
+export declare const EmbedToken: coreClient.CompositeMapper;
 export declare const ODataResponseListDataset: coreClient.CompositeMapper;
 export declare const Dataset: coreClient.CompositeMapper;
 export declare const Table: coreClient.CompositeMapper;
@@ -33,7 +35,6 @@ export declare const ODataResponseListTile: coreClient.CompositeMapper;
 export declare const Tile: coreClient.CompositeMapper;
 export declare const CloneReportRequest: coreClient.CompositeMapper;
 export declare const GenerateTokenRequest: coreClient.CompositeMapper;
-export declare const EmbedToken: coreClient.CompositeMapper;
 export declare const RebindReportRequest: coreClient.CompositeMapper;
 export declare const ODataResponseListGroup: coreClient.CompositeMapper;
 export declare const Group: coreClient.CompositeMapper;

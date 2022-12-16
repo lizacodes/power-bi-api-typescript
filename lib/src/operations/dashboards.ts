@@ -295,7 +295,7 @@ const generateTokenOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.requestParameters1,
   urlParameters: [Parameters.$host, Parameters.dashboardKey],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -313,7 +313,7 @@ const generateTokenInGroupOperationSpec: coreClient.OperationSpec = {
     Parameters.groupId,
     Parameters.dashboardKey
   ],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };

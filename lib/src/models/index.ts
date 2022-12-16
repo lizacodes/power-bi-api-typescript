@@ -1,5 +1,25 @@
 import * as coreClient from "@azure/core-client";
 
+/** Power BI Generate Token Request */
+export interface GenerateTokenForAnyRequest {
+  /** Datasets */
+  datasets?: Record<string, unknown>[];
+  /** Target workspaces */
+  targetWorkspaces?: Record<string, unknown>[];
+  /** Reports */
+  reports?: Record<string, unknown>[];
+}
+
+/** Power BI Embed Token */
+export interface EmbedToken {
+  /** Embed token. */
+  token?: string;
+  /** Unique token Id. */
+  tokenId?: string;
+  /** Expiration time of token - in UTC. */
+  expiration?: Date;
+}
+
 /** A dataset odata list wrapper */
 export interface ODataResponseListDataset {
   /** OData context */
@@ -323,16 +343,6 @@ export interface GenerateTokenRequest {
   datasetId?: string;
 }
 
-/** Power BI Embed Token */
-export interface EmbedToken {
-  /** Embed token. */
-  token?: string;
-  /** Unique token Id. */
-  tokenId?: string;
-  /** Expiration time of token - in UTC. */
-  expiration?: Date;
-}
-
 /** Power BI Rebind Report Request */
 export interface RebindReportRequest {
   /** The new dataset of the rebinded report */
@@ -401,6 +411,19 @@ export enum KnownGenerateTokenRequestAccessLevel {
  * **Edit**
  */
 export type GenerateTokenRequestAccessLevel = string;
+
+/** Optional parameters. */
+export interface GenerateTokenOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the generateToken operation. */
+export type GenerateTokenResponse = EmbedToken;
+
+/** Optional parameters. */
+export interface GetGroupsOptionalParams extends coreClient.OperationOptions {}
+
+/** Contains response data for the getGroups operation. */
+export type GetGroupsResponse = ODataResponseListGroup;
 
 /** Optional parameters. */
 export interface DatasetsGetDatasetsOptionalParams
@@ -904,12 +927,6 @@ export interface TilesGenerateTokenInGroupOptionalParams
 
 /** Contains response data for the generateTokenInGroup operation. */
 export type TilesGenerateTokenInGroupResponse = EmbedToken;
-
-/** Optional parameters. */
-export interface GetGroupsOptionalParams extends coreClient.OperationOptions {}
-
-/** Contains response data for the getGroups operation. */
-export type GetGroupsResponse = ODataResponseListGroup;
 
 /** Optional parameters. */
 export interface PowerBiClientOptionalParams

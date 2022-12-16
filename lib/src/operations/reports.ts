@@ -306,7 +306,7 @@ const cloneReportOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.requestParameters,
   urlParameters: [Parameters.$host, Parameters.reportKey],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -320,7 +320,7 @@ const generateTokenOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.requestParameters1,
   urlParameters: [Parameters.$host, Parameters.reportKey],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -334,7 +334,7 @@ const generateTokenForCreateOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.requestParameters1,
   urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -376,7 +376,7 @@ const rebindReportOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.requestParameters2,
   urlParameters: [Parameters.$host, Parameters.reportKey],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -428,7 +428,7 @@ const cloneReportInGroupOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.requestParameters,
   urlParameters: [Parameters.$host, Parameters.groupId, Parameters.reportKey],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -442,7 +442,7 @@ const generateTokenInGroupOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.requestParameters1,
   urlParameters: [Parameters.$host, Parameters.groupId, Parameters.reportKey],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -456,7 +456,7 @@ const generateTokenForCreateInGroupOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.requestParameters1,
   urlParameters: [Parameters.$host, Parameters.groupId],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
@@ -472,7 +472,7 @@ const rebindReportInGroupOperationSpec: coreClient.OperationSpec = {
   },
   requestBody: Parameters.requestParameters2,
   urlParameters: [Parameters.$host, Parameters.groupId, Parameters.reportKey],
-  headerParameters: [Parameters.accept, Parameters.contentType],
+  headerParameters: [Parameters.contentType, Parameters.accept],
   mediaType: "json",
   serializer
 };
