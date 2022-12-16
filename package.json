@@ -1,0 +1,23 @@
+{
+  "name": "power-bi-api-typescript",
+  "version": "1.0.0",
+  "description": "Autorest-generated client library for Power BI REST API",
+  "main": "index.js",
+  "scripts": {
+    "autorest": "autorest autorest-config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lizacodes/power-bi-api-typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lizacodes/power-bi-api-typescript/issues"
+  },
+  "homepage": "https://github.com/lizacodes/power-bi-api-typescript#readme",
+  "devDependencies": {
+    "autorest": "^3.6.2"
+  }
+}

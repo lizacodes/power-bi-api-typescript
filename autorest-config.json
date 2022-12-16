@@ -1,0 +1,8 @@
+{
+  "typescript": true,
+  "add-credentials": true,
+  "output-folder": "lib",
+  "input-file": "power-bi-api-v1-spec.json",
+  "override-client-name": "PowerBiClient",
+  "package-name": "power-bi-typescript-client"
+}
