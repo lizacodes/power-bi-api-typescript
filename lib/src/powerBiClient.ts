@@ -76,7 +76,7 @@ export class PowerBiClient extends coreClient.ServiceClient {
       });
       this.pipeline.addPolicy(
         coreRestPipeline.bearerTokenAuthenticationPolicy({
-          credential: credentials,
+          credential: options.credential,
           scopes:
             optionsWithDefaults.credentialScopes ??
             `${optionsWithDefaults.endpoint}/.default`,

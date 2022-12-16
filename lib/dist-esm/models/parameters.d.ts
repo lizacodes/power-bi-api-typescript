@@ -1,0 +1,28 @@
+import { OperationParameter, OperationURLParameter, OperationQueryParameter } from "@azure/core-client";
+export declare const accept: OperationParameter;
+export declare const $host: OperationURLParameter;
+export declare const contentType: OperationParameter;
+export declare const dataset: OperationParameter;
+export declare const requestMessage: OperationParameter;
+export declare const datasetKey: OperationURLParameter;
+export declare const tableName: OperationURLParameter;
+export declare const parameters: OperationParameter;
+export declare const bindToGatewayRequest: OperationParameter;
+export declare const groupId: OperationURLParameter;
+export declare const gatewayId: OperationURLParameter;
+export declare const datasourceToGatewayRequest: OperationParameter;
+export declare const datasourceId: OperationURLParameter;
+export declare const updateDatasourceRequest: OperationParameter;
+export declare const addUserToDatasourceRequest: OperationParameter;
+export declare const emailAdress: OperationURLParameter;
+export declare const importInfo: OperationParameter;
+export declare const datasetDisplayName: OperationQueryParameter;
+export declare const nameConflict: OperationQueryParameter;
+export declare const importId: OperationURLParameter;
+export declare const requestParameters: OperationParameter;
+export declare const reportKey: OperationURLParameter;
+export declare const requestParameters1: OperationParameter;
+export declare const requestParameters2: OperationParameter;
+export declare const dashboardKey: OperationURLParameter;
+export declare const tileKey: OperationURLParameter;
+//# sourceMappingURL=parameters.d.ts.map
