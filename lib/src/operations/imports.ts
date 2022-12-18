@@ -131,7 +131,7 @@ export class ImportsImpl implements Imports {
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
 const getImportsOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/imports",
+  path: "/imports",
   httpMethod: "GET",
   responses: {
     200: {
@@ -143,7 +143,7 @@ const getImportsOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const postImportOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/imports",
+  path: "/imports",
   httpMethod: "POST",
   responses: {
     200: {
@@ -158,7 +158,7 @@ const postImportOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getImportByIdOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/imports/{importId}",
+  path: "/imports/{importId}",
   httpMethod: "GET",
   responses: {
     200: {
@@ -170,7 +170,7 @@ const getImportByIdOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getImportsInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/imports",
+  path: "/groups/{groupId}/imports",
   httpMethod: "GET",
   responses: {
     200: {
@@ -182,7 +182,7 @@ const getImportsInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const postImportInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/imports",
+  path: "/groups/{groupId}/imports",
   httpMethod: "POST",
   responses: {
     200: {
@@ -197,7 +197,7 @@ const postImportInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getImportByIdInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/imports/{importId}",
+  path: "/groups/{groupId}/imports/{importId}",
   httpMethod: "GET",
   responses: {
     200: {

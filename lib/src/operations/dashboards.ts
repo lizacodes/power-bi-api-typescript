@@ -188,7 +188,7 @@ export class DashboardsImpl implements Dashboards {
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
 const getDashboardsOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/dashboards",
+  path: "/dashboards",
   httpMethod: "GET",
   responses: {
     200: {
@@ -200,7 +200,7 @@ const getDashboardsOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getDashboardsInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/dashboards",
+  path: "/groups/{groupId}/dashboards",
   httpMethod: "GET",
   responses: {
     200: {
@@ -212,7 +212,7 @@ const getDashboardsInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getDashboardOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/dashboards/{dashboardKey}",
+  path: "/dashboards/{dashboardKey}",
   httpMethod: "POST",
   responses: {
     200: {
@@ -224,7 +224,7 @@ const getDashboardOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getTilesOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/dashboards/{dashboardKey}/tiles",
+  path: "/dashboards/{dashboardKey}/tiles",
   httpMethod: "GET",
   responses: {
     200: {
@@ -236,7 +236,7 @@ const getTilesOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getTilesInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/tiles",
+  path: "/groups/{groupId}/dashboards/{dashboardKey}/tiles",
   httpMethod: "GET",
   responses: {
     200: {
@@ -252,7 +252,7 @@ const getTilesInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getTileOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/dashboards/{dashboardKey}/tiles/{tileKey}",
+  path: "/dashboards/{dashboardKey}/tiles/{tileKey}",
   httpMethod: "GET",
   responses: {
     200: {
@@ -268,8 +268,7 @@ const getTileOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getTileInGroupOperationSpec: coreClient.OperationSpec = {
-  path:
-    "/v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/tiles/{tileKey}",
+  path: "/groups/{groupId}/dashboards/{dashboardKey}/tiles/{tileKey}",
   httpMethod: "GET",
   responses: {
     200: {
@@ -286,7 +285,7 @@ const getTileInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const generateTokenOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/dashboards/{dashboardKey}/GenerateToken",
+  path: "/dashboards/{dashboardKey}/GenerateToken",
   httpMethod: "POST",
   responses: {
     200: {
@@ -300,7 +299,7 @@ const generateTokenOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const generateTokenInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/GenerateToken",
+  path: "/groups/{groupId}/dashboards/{dashboardKey}/GenerateToken",
   httpMethod: "POST",
   responses: {
     200: {

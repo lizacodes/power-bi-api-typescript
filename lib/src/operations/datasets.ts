@@ -572,7 +572,7 @@ export class DatasetsImpl implements Datasets {
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
 const getDatasetsOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/datasets",
+  path: "/datasets",
   httpMethod: "GET",
   responses: {
     200: {
@@ -584,7 +584,7 @@ const getDatasetsOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const postDatasetOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/datasets",
+  path: "/datasets",
   httpMethod: "POST",
   responses: {
     201: {
@@ -605,7 +605,7 @@ const postDatasetOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const postRowsOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/datasets/{datasetKey}/tables/{tableName}/rows",
+  path: "/datasets/{datasetKey}/tables/{tableName}/rows",
   httpMethod: "POST",
   responses: {
     200: {
@@ -625,7 +625,7 @@ const postRowsOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const deleteRowsOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/datasets/{datasetKey}/tables/{tableName}/rows",
+  path: "/datasets/{datasetKey}/tables/{tableName}/rows",
   httpMethod: "DELETE",
   responses: {
     200: {
@@ -643,7 +643,7 @@ const deleteRowsOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getTablesOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/datasets/{datasetKey}/tables",
+  path: "/datasets/{datasetKey}/tables",
   httpMethod: "GET",
   responses: {
     200: {
@@ -655,7 +655,7 @@ const getTablesOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const putTableOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/datasets/{datasetKey}/tables/{tableName}",
+  path: "/datasets/{datasetKey}/tables/{tableName}",
   httpMethod: "PUT",
   responses: {
     200: {
@@ -675,7 +675,7 @@ const putTableOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getDatasetByIdOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/datasets/{datasetKey}",
+  path: "/datasets/{datasetKey}",
   httpMethod: "GET",
   responses: {
     200: {
@@ -687,7 +687,7 @@ const getDatasetByIdOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const deleteDatasetByIdOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/datasets/{datasetKey}",
+  path: "/datasets/{datasetKey}",
   httpMethod: "DELETE",
   responses: {
     200: {
@@ -701,7 +701,7 @@ const deleteDatasetByIdOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getRefreshHistoryOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/datasets/{datasetKey}/refreshes",
+  path: "/datasets/{datasetKey}/refreshes",
   httpMethod: "GET",
   responses: {
     200: {
@@ -713,7 +713,7 @@ const getRefreshHistoryOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const refreshDatasetOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/datasets/{datasetKey}/refreshes",
+  path: "/datasets/{datasetKey}/refreshes",
   httpMethod: "POST",
   responses: {
     202: {
@@ -727,7 +727,7 @@ const refreshDatasetOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getGatewayDatasourcesOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/datasets/{datasetKey}/Default.GetBoundGatewayDatasources",
+  path: "/datasets/{datasetKey}/Default.GetBoundGatewayDatasources",
   httpMethod: "GET",
   responses: {
     200: {
@@ -739,7 +739,7 @@ const getGatewayDatasourcesOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getDatasourcesOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/datasets/{datasetKey}/datasources",
+  path: "/datasets/{datasetKey}/datasources",
   httpMethod: "GET",
   responses: {
     200: {
@@ -751,7 +751,7 @@ const getDatasourcesOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const setAllConnectionsOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/datasets/{datasetKey}/Default.SetAllConnections",
+  path: "/datasets/{datasetKey}/Default.SetAllConnections",
   httpMethod: "POST",
   responses: {
     200: {
@@ -767,7 +767,7 @@ const setAllConnectionsOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const bindToGatewayOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/datasets/{datasetKey}/Default.BindToGateway",
+  path: "/datasets/{datasetKey}/Default.BindToGateway",
   httpMethod: "POST",
   responses: {
     200: {
@@ -783,7 +783,7 @@ const bindToGatewayOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getDatasetsInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/datasets",
+  path: "/groups/{groupId}/datasets",
   httpMethod: "GET",
   responses: {
     200: {
@@ -795,7 +795,7 @@ const getDatasetsInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const postDatasetInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/datasets",
+  path: "/groups/{groupId}/datasets",
   httpMethod: "POST",
   responses: {
     201: {
@@ -816,8 +816,7 @@ const postDatasetInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const postRowsInGroupOperationSpec: coreClient.OperationSpec = {
-  path:
-    "/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/tables/{tableName}/rows",
+  path: "/groups/{groupId}/datasets/{datasetKey}/tables/{tableName}/rows",
   httpMethod: "POST",
   responses: {
     200: {
@@ -838,8 +837,7 @@ const postRowsInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const deleteRowsInGroupOperationSpec: coreClient.OperationSpec = {
-  path:
-    "/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/tables/{tableName}/rows",
+  path: "/groups/{groupId}/datasets/{datasetKey}/tables/{tableName}/rows",
   httpMethod: "DELETE",
   responses: {
     200: {
@@ -858,7 +856,7 @@ const deleteRowsInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getTablesInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/tables",
+  path: "/groups/{groupId}/datasets/{datasetKey}/tables",
   httpMethod: "GET",
   responses: {
     200: {
@@ -870,7 +868,7 @@ const getTablesInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const putTableInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/tables/{tableName}",
+  path: "/groups/{groupId}/datasets/{datasetKey}/tables/{tableName}",
   httpMethod: "PUT",
   responses: {
     200: {
@@ -891,7 +889,7 @@ const putTableInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getDatasetByIdInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}",
+  path: "/groups/{groupId}/datasets/{datasetKey}",
   httpMethod: "GET",
   responses: {
     200: {
@@ -903,7 +901,7 @@ const getDatasetByIdInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const deleteDatasetByIdInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}",
+  path: "/groups/{groupId}/datasets/{datasetKey}",
   httpMethod: "DELETE",
   responses: {
     200: {
@@ -917,7 +915,7 @@ const deleteDatasetByIdInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getRefreshHistoryInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/refreshes",
+  path: "/groups/{groupId}/datasets/{datasetKey}/refreshes",
   httpMethod: "GET",
   responses: {
     200: {
@@ -929,7 +927,7 @@ const getRefreshHistoryInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const refreshDatasetInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/refreshes",
+  path: "/groups/{groupId}/datasets/{datasetKey}/refreshes",
   httpMethod: "POST",
   responses: {
     202: {
@@ -944,7 +942,7 @@ const refreshDatasetInGroupOperationSpec: coreClient.OperationSpec = {
 };
 const getGatewayDatasourcesInGroupOperationSpec: coreClient.OperationSpec = {
   path:
-    "/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/Default.GetBoundGatewayDatasources",
+    "/groups/{groupId}/datasets/{datasetKey}/Default.GetBoundGatewayDatasources",
   httpMethod: "GET",
   responses: {
     200: {
@@ -956,7 +954,7 @@ const getGatewayDatasourcesInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getDatasourcesInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/datasources",
+  path: "/groups/{groupId}/datasets/{datasetKey}/datasources",
   httpMethod: "GET",
   responses: {
     200: {
@@ -968,8 +966,7 @@ const getDatasourcesInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const setAllConnectionsInGroupOperationSpec: coreClient.OperationSpec = {
-  path:
-    "/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/Default.SetAllConnections",
+  path: "/groups/{groupId}/datasets/{datasetKey}/Default.SetAllConnections",
   httpMethod: "POST",
   responses: {
     200: {
@@ -985,8 +982,7 @@ const setAllConnectionsInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const bindToGatewayInGroupOperationSpec: coreClient.OperationSpec = {
-  path:
-    "/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/Default.BindToGateway",
+  path: "/groups/{groupId}/datasets/{datasetKey}/Default.BindToGateway",
   httpMethod: "POST",
   responses: {
     200: {
@@ -1002,7 +998,7 @@ const bindToGatewayInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const takeOverInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/Default.TakeOver",
+  path: "/groups/{groupId}/datasets/{datasetKey}/Default.TakeOver",
   httpMethod: "POST",
   responses: {
     200: {

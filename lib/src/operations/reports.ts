@@ -285,7 +285,7 @@ export class ReportsImpl implements Reports {
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
 const getReportsOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/reports",
+  path: "/reports",
   httpMethod: "GET",
   responses: {
     200: {
@@ -297,7 +297,7 @@ const getReportsOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const cloneReportOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/reports/{reportKey}/Clone",
+  path: "/reports/{reportKey}/Clone",
   httpMethod: "POST",
   responses: {
     200: {
@@ -311,7 +311,7 @@ const cloneReportOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const generateTokenOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/reports/{reportKey}/GenerateToken",
+  path: "/reports/{reportKey}/GenerateToken",
   httpMethod: "POST",
   responses: {
     200: {
@@ -325,7 +325,7 @@ const generateTokenOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const generateTokenForCreateOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/reports/GenerateToken",
+  path: "/reports/GenerateToken",
   httpMethod: "POST",
   responses: {
     200: {
@@ -339,7 +339,7 @@ const generateTokenForCreateOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getReportOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/reports/{reportKey}",
+  path: "/reports/{reportKey}",
   httpMethod: "GET",
   responses: {
     200: {
@@ -351,7 +351,7 @@ const getReportOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const deleteReportOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/reports/{reportKey}",
+  path: "/reports/{reportKey}",
   httpMethod: "DELETE",
   responses: {
     200: {
@@ -365,7 +365,7 @@ const deleteReportOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const rebindReportOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/reports/{reportKey}/Rebind",
+  path: "/reports/{reportKey}/Rebind",
   httpMethod: "POST",
   responses: {
     200: {
@@ -381,7 +381,7 @@ const rebindReportOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getReportsInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/reports",
+  path: "/groups/{groupId}/reports",
   httpMethod: "GET",
   responses: {
     200: {
@@ -393,7 +393,7 @@ const getReportsInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getReportInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/reports/{reportKey}",
+  path: "/groups/{groupId}/reports/{reportKey}",
   httpMethod: "GET",
   responses: {
     200: {
@@ -405,7 +405,7 @@ const getReportInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const deleteReportInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/reports/{reportKey}",
+  path: "/groups/{groupId}/reports/{reportKey}",
   httpMethod: "DELETE",
   responses: {
     200: {
@@ -419,7 +419,7 @@ const deleteReportInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const cloneReportInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/reports/{reportKey}/Clone",
+  path: "/groups/{groupId}/reports/{reportKey}/Clone",
   httpMethod: "POST",
   responses: {
     200: {
@@ -433,7 +433,7 @@ const cloneReportInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const generateTokenInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/reports/{reportKey}/GenerateToken",
+  path: "/groups/{groupId}/reports/{reportKey}/GenerateToken",
   httpMethod: "POST",
   responses: {
     200: {
@@ -447,7 +447,7 @@ const generateTokenInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const generateTokenForCreateInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/reports/GenerateToken",
+  path: "/groups/{groupId}/reports/GenerateToken",
   httpMethod: "POST",
   responses: {
     200: {
@@ -461,7 +461,7 @@ const generateTokenForCreateInGroupOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const rebindReportInGroupOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/groups/{groupId}/reports/{reportKey}/Rebind",
+  path: "/groups/{groupId}/reports/{reportKey}/Rebind",
   httpMethod: "POST",
   responses: {
     200: {

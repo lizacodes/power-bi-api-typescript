@@ -67,7 +67,7 @@ export class TilesImpl implements Tiles {
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
 const generateTokenOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/dashboards/{dashboardKey}/tiles/{tileKey}/GenerateToken",
+  path: "/dashboards/{dashboardKey}/tiles/{tileKey}/GenerateToken",
   httpMethod: "POST",
   responses: {
     200: {
@@ -86,7 +86,7 @@ const generateTokenOperationSpec: coreClient.OperationSpec = {
 };
 const generateTokenInGroupOperationSpec: coreClient.OperationSpec = {
   path:
-    "/v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/tiles/{tileKey}/GenerateToken",
+    "/groups/{groupId}/dashboards/{dashboardKey}/tiles/{tileKey}/GenerateToken",
   httpMethod: "POST",
   responses: {
     200: {

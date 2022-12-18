@@ -232,7 +232,7 @@ export class GatewaysImpl implements Gateways {
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
 const getGatewaysOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/gateways",
+  path: "/gateways",
   httpMethod: "GET",
   responses: {
     200: {
@@ -244,7 +244,7 @@ const getGatewaysOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getGatewayByIdOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/gateways/{gatewayId}",
+  path: "/gateways/{gatewayId}",
   httpMethod: "GET",
   responses: {
     200: {
@@ -256,7 +256,7 @@ const getGatewayByIdOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getDatasourcesOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/gateways/{gatewayId}/datasources",
+  path: "/gateways/{gatewayId}/datasources",
   httpMethod: "GET",
   responses: {
     200: {
@@ -268,7 +268,7 @@ const getDatasourcesOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const createDatasourceOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/gateways/{gatewayId}/datasources",
+  path: "/gateways/{gatewayId}/datasources",
   httpMethod: "POST",
   responses: {
     201: {
@@ -284,7 +284,7 @@ const createDatasourceOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getDatasourceByIdOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/gateways/{gatewayId}/datasources/{datasourceId}",
+  path: "/gateways/{gatewayId}/datasources/{datasourceId}",
   httpMethod: "GET",
   responses: {
     200: {
@@ -300,7 +300,7 @@ const getDatasourceByIdOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const deleteDatasourceOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/gateways/{gatewayId}/datasources/{datasourceId}",
+  path: "/gateways/{gatewayId}/datasources/{datasourceId}",
   httpMethod: "DELETE",
   responses: {
     200: {
@@ -318,7 +318,7 @@ const deleteDatasourceOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const updateDatasourceOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/gateways/{gatewayId}/datasources/{datasourceId}",
+  path: "/gateways/{gatewayId}/datasources/{datasourceId}",
   httpMethod: "PATCH",
   responses: {
     200: {
@@ -338,7 +338,7 @@ const updateDatasourceOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getDatasourceStatusByIdOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/gateways/{gatewayId}/datasources/{datasourceId}/status",
+  path: "/gateways/{gatewayId}/datasources/{datasourceId}/status",
   httpMethod: "GET",
   responses: {
     200: {
@@ -356,7 +356,7 @@ const getDatasourceStatusByIdOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const getDatasourceUsersOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/gateways/{gatewayId}/datasources/{datasourceId}/users",
+  path: "/gateways/{gatewayId}/datasources/{datasourceId}/users",
   httpMethod: "GET",
   responses: {
     200: {
@@ -372,7 +372,7 @@ const getDatasourceUsersOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const addDatasourceUserOperationSpec: coreClient.OperationSpec = {
-  path: "/v1.0/myorg/gateways/{gatewayId}/datasources/{datasourceId}/users",
+  path: "/gateways/{gatewayId}/datasources/{datasourceId}/users",
   httpMethod: "POST",
   responses: {
     200: {
@@ -392,8 +392,7 @@ const addDatasourceUserOperationSpec: coreClient.OperationSpec = {
   serializer
 };
 const deleteDatasourceUserOperationSpec: coreClient.OperationSpec = {
-  path:
-    "/v1.0/myorg/gateways/{gatewayId}/datasources/{datasourceId}/users/{emailAdress}",
+  path: "/gateways/{gatewayId}/datasources/{datasourceId}/users/{emailAdress}",
   httpMethod: "DELETE",
   responses: {
     200: {
