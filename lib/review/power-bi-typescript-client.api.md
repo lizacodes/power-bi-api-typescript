@@ -4,6 +4,7 @@
 
 ```ts
 
+import * as coreAuth from '@azure/core-auth';
 import * as coreClient from '@azure/core-client';
 
 // @public
@@ -506,6 +507,17 @@ export interface GatewaysUpdateDatasourceOptionalParams extends coreClient.Opera
 export type GatewaysUpdateDatasourceResponse = Record<string, unknown>;
 
 // @public
+export interface GenerateTokenForAnyRequest {
+    datasets?: Record<string, unknown>[];
+    reports?: Record<string, unknown>[];
+    targetWorkspaces?: Record<string, unknown>[];
+}
+
+// @public
+export interface GenerateTokenOptionalParams extends coreClient.OperationOptions {
+}
+
+// @public
 export interface GenerateTokenRequest {
     accessLevel?: GenerateTokenRequestAccessLevel;
     datasetId?: string;
@@ -513,6 +525,9 @@ export interface GenerateTokenRequest {
 
 // @public
 export type GenerateTokenRequestAccessLevel = string;
+
+// @public
+export type GenerateTokenResponse = EmbedToken;
 
 // @public
 export interface GetGroupsOptionalParams extends coreClient.OperationOptions {
@@ -691,13 +706,14 @@ export interface ODataResponseListUserAccessRight {
 export class PowerBiClient extends coreClient.ServiceClient {
     // (undocumented)
     $host: string;
-    constructor(options?: PowerBiClientOptionalParams);
+    constructor(credentials: coreAuth.TokenCredential, options?: PowerBiClientOptionalParams);
     // (undocumented)
     dashboards: Dashboards;
     // (undocumented)
     datasets: Datasets;
     // (undocumented)
     gateways: Gateways;
+    generateToken(requestBody: GenerateTokenForAnyRequest, options?: GenerateTokenOptionalParams): Promise<GenerateTokenResponse>;
     getGroups(options?: GetGroupsOptionalParams): Promise<GetGroupsResponse>;
     // (undocumented)
     imports: Imports;
