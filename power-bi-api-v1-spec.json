@@ -3115,6 +3115,24 @@
             "$ref": "#/definitions/Object"
           }
         },
+        "datasourceIdentities": {
+          "type": "array",
+          "description": "Datasource identities",
+          "items": {
+            "$ref": "#/definitions/Object"
+          }
+        },
+        "identities": {
+          "type": "array",
+          "description": "Effective identities",
+          "items": {
+            "$ref": "#/definitions/Object"
+          }
+        },
+        "lifetimeInMinutes": {
+          "type": "integer",
+          "description": "Maximum lifetime of token in minutes"
+        },
         "targetWorkspaces": {
           "type": "array",
           "description": "Target workspaces",

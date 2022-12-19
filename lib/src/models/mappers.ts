@@ -17,6 +17,36 @@ export const GenerateTokenForAnyRequest: coreClient.CompositeMapper = {
           }
         }
       },
+      datasourceIdentities: {
+        serializedName: "datasourceIdentities",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Dictionary",
+              value: { type: { name: "any" } }
+            }
+          }
+        }
+      },
+      identities: {
+        serializedName: "identities",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Dictionary",
+              value: { type: { name: "any" } }
+            }
+          }
+        }
+      },
+      lifetimeInMinutes: {
+        serializedName: "lifetimeInMinutes",
+        type: {
+          name: "Number"
+        }
+      },
       targetWorkspaces: {
         serializedName: "targetWorkspaces",
         type: {

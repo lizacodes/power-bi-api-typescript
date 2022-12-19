@@ -846,6 +846,12 @@ export declare type GatewaysUpdateDatasourceResponse = Record<string, unknown>;
 export declare interface GenerateTokenForAnyRequest {
     /** Datasets */
     datasets?: Record<string, unknown>[];
+    /** Datasource identities */
+    datasourceIdentities?: Record<string, unknown>[];
+    /** Effective identities */
+    identities?: Record<string, unknown>[];
+    /** Maximum lifetime of token in minutes */
+    lifetimeInMinutes?: number;
     /** Target workspaces */
     targetWorkspaces?: Record<string, unknown>[];
     /** Reports */

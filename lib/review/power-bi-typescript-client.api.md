@@ -509,6 +509,9 @@ export type GatewaysUpdateDatasourceResponse = Record<string, unknown>;
 // @public
 export interface GenerateTokenForAnyRequest {
     datasets?: Record<string, unknown>[];
+    datasourceIdentities?: Record<string, unknown>[];
+    identities?: Record<string, unknown>[];
+    lifetimeInMinutes?: number;
     reports?: Record<string, unknown>[];
     targetWorkspaces?: Record<string, unknown>[];
 }
