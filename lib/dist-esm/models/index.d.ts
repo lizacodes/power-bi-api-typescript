@@ -235,6 +235,8 @@ export interface Report {
     webUrl?: string;
     /** The report embed url */
     embedUrl?: string;
+    /** Dataset ID for the report */
+    datasetId?: string;
 }
 /** The import info */
 export interface ImportInfo {

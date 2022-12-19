@@ -758,6 +758,7 @@ export interface Refresh {
 
 // @public
 export interface Report {
+    datasetId?: string;
     embedUrl?: string;
     id?: string;
     name?: string;

@@ -2847,6 +2847,10 @@
         "embedUrl": {
           "type": "string",
           "description": "The report embed url"
+        },
+        "datasetId": {
+          "type": "string",
+          "description": "Dataset ID for the report"
         }
       }
     },

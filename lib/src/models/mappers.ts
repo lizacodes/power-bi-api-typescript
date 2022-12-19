@@ -862,6 +862,12 @@ export const Report: coreClient.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      datasetId: {
+        serializedName: "datasetId",
+        type: {
+          name: "String"
+        }
       }
     }
   }
