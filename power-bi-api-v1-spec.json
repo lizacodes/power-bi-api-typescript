@@ -38,6 +38,33 @@
         "deprecated": false
       }
     },
+    "/profiles": {
+      "post": {
+        "tags": ["Profiles"],
+        "summary": "Creates a new profile that belongs to the service principal",
+        "operationId": "Profiles_PostProfiles",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "requestBody",
+            "in": "body",
+            "description": "The request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateOrUpdateProfileRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ServicePrincipalProfile"
+            }
+          }
+        }
+      }
+    },
     "/datasets": {
       "get": {
         "tags": ["Datasets"],
@@ -2347,7 +2374,7 @@
             "type": "string"
           },
           {
-            "name": "requestParameters",
+            "name": "requestBody",
             "description": "Generate token parameters",
             "in": "body",
             "required": true,
@@ -2395,6 +2422,40 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/RebindReportRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Object"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/groups/{groupId}/users": {
+      "post": {
+        "tags": ["Groups", "Workspaces", "Users"],
+        "summary": "Grants the specified user the specified permissions to the specified workspace.",
+        "operationId": "Groups_AddUser",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "path",
+            "required": true,
+            "description": "The group id",
+            "type": "string"
+          },
+          {
+            "name": "requestBody",
+            "description": "Request body for adding user to a group",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AddGroupUserRequest"
             }
           }
         ],
@@ -3182,13 +3243,75 @@
           "description": "Expiration time of token - in UTC."
         }
       }
+    },
+    "CreateOrUpdateProfileRequest": {
+      "type": "object",
+      "description": "Create profile request",
+      "properties": {
+        "displayName": {
+          "type": "string",
+          "description": "The service principal profile name"
+        }
+      }
+    },
+    "ServicePrincipalProfile": {
+      "type": "object",
+      "description": "Create profile request",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The service principal profile ID"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "The service principal profile name"
+        }
+      }
+    },
+    "AddGroupUserRequest": {
+      "type": "object",
+      "description": "Create profile request",
+      "required": ["groupUserAccessRight", "identifier", "principalType"],
+      "properties": {
+        "groupUserAccessRight": {
+          "type": "string",
+          "description": "The access right (permission level) that a user has on the workspace",
+          "enum": ["Admin", "Contributor", "Member", "None", "Viewer"]
+        },
+        "identifier": {
+          "type": "string",
+          "description": "Identifier of the principal"
+        },
+        "principalType": {
+          "type": "string",
+          "description": "The access right (permission level) that a user has on the workspace",
+          "enum": ["App", "Group", "None", "User"]
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Display name of the principal"
+        },
+        "emailAddress": {
+          "type": "string",
+          "description": "Email address of the user"
+        },
+        "graphId": {
+          "type": "string",
+          "description": "Identifier of the principal in Microsoft Graph. Only available for admin APIs."
+        },
+        "profile": {
+          "$ref": "#/definitions/ServicePrincipalProfile",
+          "description": "A Power BI service principal profile. Only relevant for Power BI Embedded multi-tenancy solution."
+        },
+        "userType": {
+          "type": "string",
+          "description": "Type of the user."
+        }
+      }
     }
   },
   "responses": {},
-  "security": [
-    {"bearerAuth": []},
-    {"profileId": []}
-  ],
+  "security": [{ "bearerAuth": [] }, { "profileId": [] }],
   "securityDefinitions": {
     "bearerAuth": {
       "type": "apiKey",

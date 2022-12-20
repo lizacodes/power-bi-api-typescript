@@ -102,6 +102,42 @@ export const EmbedToken: coreClient.CompositeMapper = {
   }
 };
 
+export const CreateOrUpdateProfileRequest: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "CreateOrUpdateProfileRequest",
+    modelProperties: {
+      displayName: {
+        serializedName: "displayName",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ServicePrincipalProfile: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ServicePrincipalProfile",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        type: {
+          name: "String"
+        }
+      },
+      displayName: {
+        serializedName: "displayName",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const ODataResponseListDataset: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -1194,6 +1230,67 @@ export const Group: coreClient.CompositeMapper = {
         serializedName: "isReadOnly",
         type: {
           name: "Boolean"
+        }
+      }
+    }
+  }
+};
+
+export const AddGroupUserRequest: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "AddGroupUserRequest",
+    modelProperties: {
+      groupUserAccessRight: {
+        serializedName: "groupUserAccessRight",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      identifier: {
+        serializedName: "identifier",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      principalType: {
+        serializedName: "principalType",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      displayName: {
+        serializedName: "displayName",
+        type: {
+          name: "String"
+        }
+      },
+      emailAddress: {
+        serializedName: "emailAddress",
+        type: {
+          name: "String"
+        }
+      },
+      graphId: {
+        serializedName: "graphId",
+        type: {
+          name: "String"
+        }
+      },
+      profile: {
+        serializedName: "profile",
+        type: {
+          name: "Composite",
+          className: "ServicePrincipalProfile"
+        }
+      },
+      userType: {
+        serializedName: "userType",
+        type: {
+          name: "String"
         }
       }
     }

@@ -26,6 +26,20 @@ export interface EmbedToken {
   expiration?: Date;
 }
 
+/** Create profile request */
+export interface CreateOrUpdateProfileRequest {
+  /** The service principal profile name */
+  displayName?: string;
+}
+
+/** Create profile request */
+export interface ServicePrincipalProfile {
+  /** The service principal profile ID */
+  id?: string;
+  /** The service principal profile name */
+  displayName?: string;
+}
+
 /** A dataset odata list wrapper */
 export interface ODataResponseListDataset {
   /** OData context */
@@ -375,6 +389,26 @@ export interface Group {
   isReadOnly?: boolean;
 }
 
+/** Create profile request */
+export interface AddGroupUserRequest {
+  /** The access right (permission level) that a user has on the workspace */
+  groupUserAccessRight: AddGroupUserRequestGroupUserAccessRight;
+  /** Identifier of the principal */
+  identifier: string;
+  /** The access right (permission level) that a user has on the workspace */
+  principalType: AddGroupUserRequestPrincipalType;
+  /** Display name of the principal */
+  displayName?: string;
+  /** Email address of the user */
+  emailAddress?: string;
+  /** Identifier of the principal in Microsoft Graph. Only available for admin APIs. */
+  graphId?: string;
+  /** A Power BI service principal profile. Only relevant for Power BI Embedded multi-tenancy solution. */
+  profile?: ServicePrincipalProfile;
+  /** Type of the user. */
+  userType?: string;
+}
+
 /** Known values of {@link DatasetDefaultMode} that the service accepts. */
 export enum KnownDatasetDefaultMode {
   /** AsAzure */
@@ -420,6 +454,57 @@ export enum KnownGenerateTokenRequestAccessLevel {
  */
 export type GenerateTokenRequestAccessLevel = string;
 
+/** Known values of {@link AddGroupUserRequestGroupUserAccessRight} that the service accepts. */
+export enum KnownAddGroupUserRequestGroupUserAccessRight {
+  /** Admin */
+  Admin = "Admin",
+  /** Contributor */
+  Contributor = "Contributor",
+  /** Member */
+  Member = "Member",
+  /** None */
+  None = "None",
+  /** Viewer */
+  Viewer = "Viewer"
+}
+
+/**
+ * Defines values for AddGroupUserRequestGroupUserAccessRight. \
+ * {@link KnownAddGroupUserRequestGroupUserAccessRight} can be used interchangeably with AddGroupUserRequestGroupUserAccessRight,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **Admin** \
+ * **Contributor** \
+ * **Member** \
+ * **None** \
+ * **Viewer**
+ */
+export type AddGroupUserRequestGroupUserAccessRight = string;
+
+/** Known values of {@link AddGroupUserRequestPrincipalType} that the service accepts. */
+export enum KnownAddGroupUserRequestPrincipalType {
+  /** App */
+  App = "App",
+  /** Group */
+  Group = "Group",
+  /** None */
+  None = "None",
+  /** User */
+  User = "User"
+}
+
+/**
+ * Defines values for AddGroupUserRequestPrincipalType. \
+ * {@link KnownAddGroupUserRequestPrincipalType} can be used interchangeably with AddGroupUserRequestPrincipalType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **App** \
+ * **Group** \
+ * **None** \
+ * **User**
+ */
+export type AddGroupUserRequestPrincipalType = string;
+
 /** Optional parameters. */
 export interface GenerateTokenOptionalParams
   extends coreClient.OperationOptions {}
@@ -432,6 +517,13 @@ export interface GetGroupsOptionalParams extends coreClient.OperationOptions {}
 
 /** Contains response data for the getGroups operation. */
 export type GetGroupsResponse = ODataResponseListGroup;
+
+/** Optional parameters. */
+export interface ProfilesPostProfilesOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the postProfiles operation. */
+export type ProfilesPostProfilesResponse = ServicePrincipalProfile;
 
 /** Optional parameters. */
 export interface DatasetsGetDatasetsOptionalParams
@@ -935,6 +1027,13 @@ export interface TilesGenerateTokenInGroupOptionalParams
 
 /** Contains response data for the generateTokenInGroup operation. */
 export type TilesGenerateTokenInGroupResponse = EmbedToken;
+
+/** Optional parameters. */
+export interface GroupsAddUserOptionalParams
+  extends coreClient.OperationOptions {}
+
+/** Contains response data for the addUser operation. */
+export type GroupsAddUserResponse = Record<string, unknown>;
 
 /** Optional parameters. */
 export interface PowerBiClientOptionalParams

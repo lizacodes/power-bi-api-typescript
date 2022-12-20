@@ -1,6 +1,6 @@
 import * as coreClient from "@azure/core-client";
 import * as coreAuth from "@azure/core-auth";
-import { Datasets, Gateways, Imports, Reports, Dashboards, Tiles } from "./operationsInterfaces";
+import { Profiles, Datasets, Gateways, Imports, Reports, Dashboards, Tiles, Groups } from "./operationsInterfaces";
 import { PowerBiClientOptionalParams, GenerateTokenForAnyRequest, GenerateTokenOptionalParams, GenerateTokenResponse, GetGroupsOptionalParams, GetGroupsResponse } from "./models";
 export declare class PowerBiClient extends coreClient.ServiceClient {
     $host: string;
@@ -21,11 +21,13 @@ export declare class PowerBiClient extends coreClient.ServiceClient {
      * @param options The options parameters.
      */
     getGroups(options?: GetGroupsOptionalParams): Promise<GetGroupsResponse>;
+    profiles: Profiles;
     datasets: Datasets;
     gateways: Gateways;
     imports: Imports;
     reports: Reports;
     dashboards: Dashboards;
     tiles: Tiles;
+    groups: Groups;
 }
 //# sourceMappingURL=powerBiClient.d.ts.map

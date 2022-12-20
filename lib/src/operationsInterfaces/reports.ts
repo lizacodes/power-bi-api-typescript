@@ -161,12 +161,12 @@ export interface Reports {
   /**
    * Generate token to create a new report on a given dataset
    * @param groupId The group id
-   * @param requestParameters Generate token parameters
+   * @param requestBody Generate token parameters
    * @param options The options parameters.
    */
   generateTokenForCreateInGroup(
     groupId: string,
-    requestParameters: GenerateTokenRequest,
+    requestBody: GenerateTokenRequest,
     options?: ReportsGenerateTokenForCreateInGroupOptionalParams
   ): Promise<ReportsGenerateTokenForCreateInGroupResponse>;
   /**

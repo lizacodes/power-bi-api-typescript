@@ -5,6 +5,7 @@ import {
 } from "@azure/core-client";
 import {
   GenerateTokenForAnyRequest as GenerateTokenForAnyRequestMapper,
+  CreateOrUpdateProfileRequest as CreateOrUpdateProfileRequestMapper,
   Dataset as DatasetMapper,
   SetAllDatasetConnectionsRequest as SetAllDatasetConnectionsRequestMapper,
   BindToGatewayRequest as BindToGatewayRequestMapper,
@@ -14,7 +15,8 @@ import {
   ImportInfo as ImportInfoMapper,
   CloneReportRequest as CloneReportRequestMapper,
   GenerateTokenRequest as GenerateTokenRequestMapper,
-  RebindReportRequest as RebindReportRequestMapper
+  RebindReportRequest as RebindReportRequestMapper,
+  AddGroupUserRequest as AddGroupUserRequestMapper
 } from "../models/mappers";
 
 export const contentType: OperationParameter = {
@@ -56,6 +58,11 @@ export const $host: OperationURLParameter = {
     }
   },
   skipEncoding: true
+};
+
+export const requestBody1: OperationParameter = {
+  parameterPath: "requestBody",
+  mapper: CreateOrUpdateProfileRequestMapper
 };
 
 export const dataset: OperationParameter = {
@@ -229,6 +236,11 @@ export const requestParameters2: OperationParameter = {
   mapper: RebindReportRequestMapper
 };
 
+export const requestBody2: OperationParameter = {
+  parameterPath: "requestBody",
+  mapper: GenerateTokenRequestMapper
+};
+
 export const dashboardKey: OperationURLParameter = {
   parameterPath: "dashboardKey",
   mapper: {
@@ -249,4 +261,9 @@ export const tileKey: OperationURLParameter = {
       name: "String"
     }
   }
+};
+
+export const requestBody3: OperationParameter = {
+  parameterPath: "requestBody",
+  mapper: AddGroupUserRequestMapper
 };

@@ -3,6 +3,7 @@ export declare const contentType: OperationParameter;
 export declare const requestBody: OperationParameter;
 export declare const accept: OperationParameter;
 export declare const $host: OperationURLParameter;
+export declare const requestBody1: OperationParameter;
 export declare const dataset: OperationParameter;
 export declare const requestMessage: OperationParameter;
 export declare const datasetKey: OperationURLParameter;
@@ -24,6 +25,8 @@ export declare const requestParameters: OperationParameter;
 export declare const reportKey: OperationURLParameter;
 export declare const requestParameters1: OperationParameter;
 export declare const requestParameters2: OperationParameter;
+export declare const requestBody2: OperationParameter;
 export declare const dashboardKey: OperationURLParameter;
 export declare const tileKey: OperationURLParameter;
+export declare const requestBody3: OperationParameter;
 //# sourceMappingURL=parameters.d.ts.map

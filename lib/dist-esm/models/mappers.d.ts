@@ -1,6 +1,8 @@
 import * as coreClient from "@azure/core-client";
 export declare const GenerateTokenForAnyRequest: coreClient.CompositeMapper;
 export declare const EmbedToken: coreClient.CompositeMapper;
+export declare const CreateOrUpdateProfileRequest: coreClient.CompositeMapper;
+export declare const ServicePrincipalProfile: coreClient.CompositeMapper;
 export declare const ODataResponseListDataset: coreClient.CompositeMapper;
 export declare const Dataset: coreClient.CompositeMapper;
 export declare const Table: coreClient.CompositeMapper;
@@ -38,4 +40,5 @@ export declare const GenerateTokenRequest: coreClient.CompositeMapper;
 export declare const RebindReportRequest: coreClient.CompositeMapper;
 export declare const ODataResponseListGroup: coreClient.CompositeMapper;
 export declare const Group: coreClient.CompositeMapper;
+export declare const AddGroupUserRequest: coreClient.CompositeMapper;
 //# sourceMappingURL=mappers.d.ts.map

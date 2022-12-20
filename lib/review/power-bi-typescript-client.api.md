@@ -8,6 +8,24 @@ import * as coreAuth from '@azure/core-auth';
 import * as coreClient from '@azure/core-client';
 
 // @public
+export interface AddGroupUserRequest {
+    displayName?: string;
+    emailAddress?: string;
+    graphId?: string;
+    groupUserAccessRight: AddGroupUserRequestGroupUserAccessRight;
+    identifier: string;
+    principalType: AddGroupUserRequestPrincipalType;
+    profile?: ServicePrincipalProfile;
+    userType?: string;
+}
+
+// @public
+export type AddGroupUserRequestGroupUserAccessRight = string;
+
+// @public
+export type AddGroupUserRequestPrincipalType = string;
+
+// @public
 export interface BasicCredentials {
     password?: string;
     username?: string;
@@ -29,6 +47,11 @@ export interface CloneReportRequest {
 export interface Column {
     dataType: string;
     name: string;
+}
+
+// @public
+export interface CreateOrUpdateProfileRequest {
+    displayName?: string;
 }
 
 // @public
@@ -547,6 +570,18 @@ export interface Group {
 }
 
 // @public
+export interface Groups {
+    addUser(groupId: string, requestBody: AddGroupUserRequest, options?: GroupsAddUserOptionalParams): Promise<GroupsAddUserResponse>;
+}
+
+// @public
+export interface GroupsAddUserOptionalParams extends coreClient.OperationOptions {
+}
+
+// @public
+export type GroupsAddUserResponse = Record<string, unknown>;
+
+// @public
 export interface Import {
     datasets?: Dataset[];
     id?: string;
@@ -614,6 +649,23 @@ export interface ImportsPostImportOptionalParams extends coreClient.OperationOpt
 
 // @public
 export type ImportsPostImportResponse = Import;
+
+// @public
+export enum KnownAddGroupUserRequestGroupUserAccessRight {
+    Admin = "Admin",
+    Contributor = "Contributor",
+    Member = "Member",
+    None = "None",
+    Viewer = "Viewer"
+}
+
+// @public
+export enum KnownAddGroupUserRequestPrincipalType {
+    App = "App",
+    Group = "Group",
+    None = "None",
+    User = "User"
+}
 
 // @public
 export enum KnownDatasetDefaultMode {
@@ -719,7 +771,11 @@ export class PowerBiClient extends coreClient.ServiceClient {
     generateToken(requestBody: GenerateTokenForAnyRequest, options?: GenerateTokenOptionalParams): Promise<GenerateTokenResponse>;
     getGroups(options?: GetGroupsOptionalParams): Promise<GetGroupsResponse>;
     // (undocumented)
+    groups: Groups;
+    // (undocumented)
     imports: Imports;
+    // (undocumented)
+    profiles: Profiles;
     // (undocumented)
     reports: Reports;
     // (undocumented)
@@ -731,6 +787,18 @@ export interface PowerBiClientOptionalParams extends coreClient.ServiceClientOpt
     $host?: string;
     endpoint?: string;
 }
+
+// @public
+export interface Profiles {
+    postProfiles(requestBody: CreateOrUpdateProfileRequest, options?: ProfilesPostProfilesOptionalParams): Promise<ProfilesPostProfilesResponse>;
+}
+
+// @public
+export interface ProfilesPostProfilesOptionalParams extends coreClient.OperationOptions {
+}
+
+// @public
+export type ProfilesPostProfilesResponse = ServicePrincipalProfile;
 
 // @public
 export interface PublishDatasourceToGatewayRequest {
@@ -776,7 +844,7 @@ export interface Reports {
     deleteReportInGroup(groupId: string, reportKey: string, options?: ReportsDeleteReportInGroupOptionalParams): Promise<ReportsDeleteReportInGroupResponse>;
     generateToken(reportKey: string, requestParameters: GenerateTokenRequest, options?: ReportsGenerateTokenOptionalParams): Promise<ReportsGenerateTokenResponse>;
     generateTokenForCreate(requestParameters: GenerateTokenRequest, options?: ReportsGenerateTokenForCreateOptionalParams): Promise<ReportsGenerateTokenForCreateResponse>;
-    generateTokenForCreateInGroup(groupId: string, requestParameters: GenerateTokenRequest, options?: ReportsGenerateTokenForCreateInGroupOptionalParams): Promise<ReportsGenerateTokenForCreateInGroupResponse>;
+    generateTokenForCreateInGroup(groupId: string, requestBody: GenerateTokenRequest, options?: ReportsGenerateTokenForCreateInGroupOptionalParams): Promise<ReportsGenerateTokenForCreateInGroupResponse>;
     generateTokenInGroup(groupId: string, reportKey: string, requestParameters: GenerateTokenRequest, options?: ReportsGenerateTokenInGroupOptionalParams): Promise<ReportsGenerateTokenInGroupResponse>;
     getReport(reportKey: string, options?: ReportsGetReportOptionalParams): Promise<ReportsGetReportResponse>;
     getReportInGroup(groupId: string, reportKey: string, options?: ReportsGetReportInGroupOptionalParams): Promise<ReportsGetReportInGroupResponse>;
@@ -886,6 +954,12 @@ export type ReportsRebindReportResponse = Record<string, unknown>;
 
 // @public
 export interface Row {
+    id?: string;
+}
+
+// @public
+export interface ServicePrincipalProfile {
+    displayName?: string;
     id?: string;
 }
 

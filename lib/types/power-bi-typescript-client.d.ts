@@ -1,6 +1,51 @@
 import * as coreAuth from '@azure/core-auth';
 import * as coreClient from '@azure/core-client';
 
+/** Create profile request */
+export declare interface AddGroupUserRequest {
+    /** The access right (permission level) that a user has on the workspace */
+    groupUserAccessRight: AddGroupUserRequestGroupUserAccessRight;
+    /** Identifier of the principal */
+    identifier: string;
+    /** The access right (permission level) that a user has on the workspace */
+    principalType: AddGroupUserRequestPrincipalType;
+    /** Display name of the principal */
+    displayName?: string;
+    /** Email address of the user */
+    emailAddress?: string;
+    /** Identifier of the principal in Microsoft Graph. Only available for admin APIs. */
+    graphId?: string;
+    /** A Power BI service principal profile. Only relevant for Power BI Embedded multi-tenancy solution. */
+    profile?: ServicePrincipalProfile;
+    /** Type of the user. */
+    userType?: string;
+}
+
+/**
+ * Defines values for AddGroupUserRequestGroupUserAccessRight. \
+ * {@link KnownAddGroupUserRequestGroupUserAccessRight} can be used interchangeably with AddGroupUserRequestGroupUserAccessRight,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **Admin** \
+ * **Contributor** \
+ * **Member** \
+ * **None** \
+ * **Viewer**
+ */
+export declare type AddGroupUserRequestGroupUserAccessRight = string;
+
+/**
+ * Defines values for AddGroupUserRequestPrincipalType. \
+ * {@link KnownAddGroupUserRequestPrincipalType} can be used interchangeably with AddGroupUserRequestPrincipalType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **App** \
+ * **Group** \
+ * **None** \
+ * **User**
+ */
+export declare type AddGroupUserRequestPrincipalType = string;
+
 /** Object representing basic authentication credentials */
 export declare interface BasicCredentials {
     /** Username required to access the datasource */
@@ -31,6 +76,12 @@ export declare interface Column {
     name: string;
     /** The column data type */
     dataType: string;
+}
+
+/** Create profile request */
+export declare interface CreateOrUpdateProfileRequest {
+    /** The service principal profile name */
+    displayName?: string;
 }
 
 /** The credential details */
@@ -900,6 +951,24 @@ export declare interface Group {
     isReadOnly?: boolean;
 }
 
+/** Interface representing a Groups. */
+export declare interface Groups {
+    /**
+     * Grants the specified user the specified permissions to the specified workspace.
+     * @param groupId The group id
+     * @param requestBody Request body for adding user to a group
+     * @param options The options parameters.
+     */
+    addUser(groupId: string, requestBody: AddGroupUserRequest, options?: GroupsAddUserOptionalParams): Promise<GroupsAddUserResponse>;
+}
+
+/** Optional parameters. */
+export declare interface GroupsAddUserOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the addUser operation. */
+export declare type GroupsAddUserResponse = Record<string, unknown>;
+
 /** The import object */
 export declare interface Import {
     /** The import id */
@@ -1010,6 +1079,32 @@ export declare interface ImportsPostImportOptionalParams extends coreClient.Oper
 
 /** Contains response data for the postImport operation. */
 export declare type ImportsPostImportResponse = Import;
+
+/** Known values of {@link AddGroupUserRequestGroupUserAccessRight} that the service accepts. */
+export declare enum KnownAddGroupUserRequestGroupUserAccessRight {
+    /** Admin */
+    Admin = "Admin",
+    /** Contributor */
+    Contributor = "Contributor",
+    /** Member */
+    Member = "Member",
+    /** None */
+    None = "None",
+    /** Viewer */
+    Viewer = "Viewer"
+}
+
+/** Known values of {@link AddGroupUserRequestPrincipalType} that the service accepts. */
+export declare enum KnownAddGroupUserRequestPrincipalType {
+    /** App */
+    App = "App",
+    /** Group */
+    Group = "Group",
+    /** None */
+    None = "None",
+    /** User */
+    User = "User"
+}
 
 /** Known values of {@link DatasetDefaultMode} that the service accepts. */
 export declare enum KnownDatasetDefaultMode {
@@ -1145,12 +1240,14 @@ export declare class PowerBiClient extends coreClient.ServiceClient {
      * @param options The options parameters.
      */
     getGroups(options?: GetGroupsOptionalParams): Promise<GetGroupsResponse>;
+    profiles: Profiles;
     datasets: Datasets;
     gateways: Gateways;
     imports: Imports;
     reports: Reports;
     dashboards: Dashboards;
     tiles: Tiles;
+    groups: Groups;
 }
 
 /** Optional parameters. */
@@ -1160,6 +1257,23 @@ export declare interface PowerBiClientOptionalParams extends coreClient.ServiceC
     /** Overrides client endpoint. */
     endpoint?: string;
 }
+
+/** Interface representing a Profiles. */
+export declare interface Profiles {
+    /**
+     * Creates a new profile that belongs to the service principal
+     * @param requestBody The request body
+     * @param options The options parameters.
+     */
+    postProfiles(requestBody: CreateOrUpdateProfileRequest, options?: ProfilesPostProfilesOptionalParams): Promise<ProfilesPostProfilesResponse>;
+}
+
+/** Optional parameters. */
+export declare interface ProfilesPostProfilesOptionalParams extends coreClient.OperationOptions {
+}
+
+/** Contains response data for the postProfiles operation. */
+export declare type ProfilesPostProfilesResponse = ServicePrincipalProfile;
 
 /** A Publish Datasource To Gateway Request */
 export declare interface PublishDatasourceToGatewayRequest {
@@ -1287,10 +1401,10 @@ export declare interface Reports {
     /**
      * Generate token to create a new report on a given dataset
      * @param groupId The group id
-     * @param requestParameters Generate token parameters
+     * @param requestBody Generate token parameters
      * @param options The options parameters.
      */
-    generateTokenForCreateInGroup(groupId: string, requestParameters: GenerateTokenRequest, options?: ReportsGenerateTokenForCreateInGroupOptionalParams): Promise<ReportsGenerateTokenForCreateInGroupResponse>;
+    generateTokenForCreateInGroup(groupId: string, requestBody: GenerateTokenRequest, options?: ReportsGenerateTokenForCreateInGroupOptionalParams): Promise<ReportsGenerateTokenForCreateInGroupResponse>;
     /**
      * Rebinds the specified report to requested dataset id
      * @param groupId The group id
@@ -1403,6 +1517,14 @@ export declare type ReportsRebindReportResponse = Record<string, unknown>;
 export declare interface Row {
     /** The unique row id */
     id?: string;
+}
+
+/** Create profile request */
+export declare interface ServicePrincipalProfile {
+    /** The service principal profile ID */
+    id?: string;
+    /** The service principal profile name */
+    displayName?: string;
 }
 
 export declare interface SetAllDatasetConnectionsRequest {

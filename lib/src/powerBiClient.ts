@@ -2,20 +2,24 @@ import * as coreClient from "@azure/core-client";
 import * as coreRestPipeline from "@azure/core-rest-pipeline";
 import * as coreAuth from "@azure/core-auth";
 import {
+  ProfilesImpl,
   DatasetsImpl,
   GatewaysImpl,
   ImportsImpl,
   ReportsImpl,
   DashboardsImpl,
-  TilesImpl
+  TilesImpl,
+  GroupsImpl
 } from "./operations";
 import {
+  Profiles,
   Datasets,
   Gateways,
   Imports,
   Reports,
   Dashboards,
-  Tiles
+  Tiles,
+  Groups
 } from "./operationsInterfaces";
 import * as Parameters from "./models/parameters";
 import * as Mappers from "./models/mappers";
@@ -106,12 +110,14 @@ export class PowerBiClient extends coreClient.ServiceClient {
 
     // Assigning values to Constant parameters
     this.$host = options.$host || "https://api.powerbi.com/v1.0/myorg";
+    this.profiles = new ProfilesImpl(this);
     this.datasets = new DatasetsImpl(this);
     this.gateways = new GatewaysImpl(this);
     this.imports = new ImportsImpl(this);
     this.reports = new ReportsImpl(this);
     this.dashboards = new DashboardsImpl(this);
     this.tiles = new TilesImpl(this);
+    this.groups = new GroupsImpl(this);
   }
 
   /**
@@ -137,12 +143,14 @@ export class PowerBiClient extends coreClient.ServiceClient {
     return this.sendOperationRequest({ options }, getGroupsOperationSpec);
   }
 
+  profiles: Profiles;
   datasets: Datasets;
   gateways: Gateways;
   imports: Imports;
   reports: Reports;
   dashboards: Dashboards;
   tiles: Tiles;
+  groups: Groups;
 }
 // Operation Specifications
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);

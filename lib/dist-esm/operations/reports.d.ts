@@ -92,10 +92,10 @@ export declare class ReportsImpl implements Reports {
     /**
      * Generate token to create a new report on a given dataset
      * @param groupId The group id
-     * @param requestParameters Generate token parameters
+     * @param requestBody Generate token parameters
      * @param options The options parameters.
      */
-    generateTokenForCreateInGroup(groupId: string, requestParameters: GenerateTokenRequest, options?: ReportsGenerateTokenForCreateInGroupOptionalParams): Promise<ReportsGenerateTokenForCreateInGroupResponse>;
+    generateTokenForCreateInGroup(groupId: string, requestBody: GenerateTokenRequest, options?: ReportsGenerateTokenForCreateInGroupOptionalParams): Promise<ReportsGenerateTokenForCreateInGroupResponse>;
     /**
      * Rebinds the specified report to requested dataset id
      * @param groupId The group id
