@@ -1,4 +1,4 @@
-import { AddGroupUserRequest, GroupsAddUserOptionalParams, GroupsAddUserResponse } from "../models";
+import { AddGroupUserRequest, GroupsAddGroupUserOptionalParams, GroupsAddGroupUserResponse } from "../models";
 /** Interface representing a Groups. */
 export interface Groups {
     /**
@@ -7,6 +7,6 @@ export interface Groups {
      * @param requestBody Request body for adding user to a group
      * @param options The options parameters.
      */
-    addUser(groupId: string, requestBody: AddGroupUserRequest, options?: GroupsAddUserOptionalParams): Promise<GroupsAddUserResponse>;
+    addGroupUser(groupId: string, requestBody: AddGroupUserRequest, options?: GroupsAddGroupUserOptionalParams): Promise<GroupsAddGroupUserResponse>;
 }
 //# sourceMappingURL=groups.d.ts.map

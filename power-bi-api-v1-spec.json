@@ -42,7 +42,7 @@
       "post": {
         "tags": ["Profiles"],
         "summary": "Creates a new profile that belongs to the service principal",
-        "operationId": "Profiles_PostProfiles",
+        "operationId": "Profiles_CreateProfile",
         "consumes": [],
         "parameters": [
           {
@@ -2440,7 +2440,7 @@
       "post": {
         "tags": ["Groups", "Workspaces", "Users"],
         "summary": "Grants the specified user the specified permissions to the specified workspace.",
-        "operationId": "Groups_AddUser",
+        "operationId": "Groups_AddGroupUser",
         "parameters": [
           {
             "name": "groupId",

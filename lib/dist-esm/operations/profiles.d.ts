@@ -1,6 +1,6 @@
 import { Profiles } from "../operationsInterfaces";
 import { PowerBiClient } from "../powerBiClient";
-import { CreateOrUpdateProfileRequest, ProfilesPostProfilesOptionalParams, ProfilesPostProfilesResponse } from "../models";
+import { CreateOrUpdateProfileRequest, ProfilesCreateProfileOptionalParams, ProfilesCreateProfileResponse } from "../models";
 /** Class containing Profiles operations. */
 export declare class ProfilesImpl implements Profiles {
     private readonly client;
@@ -14,6 +14,6 @@ export declare class ProfilesImpl implements Profiles {
      * @param requestBody The request body
      * @param options The options parameters.
      */
-    postProfiles(requestBody: CreateOrUpdateProfileRequest, options?: ProfilesPostProfilesOptionalParams): Promise<ProfilesPostProfilesResponse>;
+    createProfile(requestBody: CreateOrUpdateProfileRequest, options?: ProfilesCreateProfileOptionalParams): Promise<ProfilesCreateProfileResponse>;
 }
 //# sourceMappingURL=profiles.d.ts.map

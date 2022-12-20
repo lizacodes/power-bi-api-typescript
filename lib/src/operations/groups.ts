@@ -5,8 +5,8 @@ import * as Parameters from "../models/parameters";
 import { PowerBiClient } from "../powerBiClient";
 import {
   AddGroupUserRequest,
-  GroupsAddUserOptionalParams,
-  GroupsAddUserResponse
+  GroupsAddGroupUserOptionalParams,
+  GroupsAddGroupUserResponse
 } from "../models";
 
 /** Class containing Groups operations. */
@@ -27,21 +27,21 @@ export class GroupsImpl implements Groups {
    * @param requestBody Request body for adding user to a group
    * @param options The options parameters.
    */
-  addUser(
+  addGroupUser(
     groupId: string,
     requestBody: AddGroupUserRequest,
-    options?: GroupsAddUserOptionalParams
-  ): Promise<GroupsAddUserResponse> {
+    options?: GroupsAddGroupUserOptionalParams
+  ): Promise<GroupsAddGroupUserResponse> {
     return this.client.sendOperationRequest(
       { groupId, requestBody, options },
-      addUserOperationSpec
+      addGroupUserOperationSpec
     );
   }
 }
 // Operation Specifications
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
-const addUserOperationSpec: coreClient.OperationSpec = {
+const addGroupUserOperationSpec: coreClient.OperationSpec = {
   path: "/groups/{groupId}/users",
   httpMethod: "POST",
   responses: {

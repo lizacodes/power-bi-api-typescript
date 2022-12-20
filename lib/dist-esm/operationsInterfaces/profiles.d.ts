@@ -1,4 +1,4 @@
-import { CreateOrUpdateProfileRequest, ProfilesPostProfilesOptionalParams, ProfilesPostProfilesResponse } from "../models";
+import { CreateOrUpdateProfileRequest, ProfilesCreateProfileOptionalParams, ProfilesCreateProfileResponse } from "../models";
 /** Interface representing a Profiles. */
 export interface Profiles {
     /**
@@ -6,6 +6,6 @@ export interface Profiles {
      * @param requestBody The request body
      * @param options The options parameters.
      */
-    postProfiles(requestBody: CreateOrUpdateProfileRequest, options?: ProfilesPostProfilesOptionalParams): Promise<ProfilesPostProfilesResponse>;
+    createProfile(requestBody: CreateOrUpdateProfileRequest, options?: ProfilesCreateProfileOptionalParams): Promise<ProfilesCreateProfileResponse>;
 }
 //# sourceMappingURL=profiles.d.ts.map

@@ -1,6 +1,6 @@
 import { Groups } from "../operationsInterfaces";
 import { PowerBiClient } from "../powerBiClient";
-import { AddGroupUserRequest, GroupsAddUserOptionalParams, GroupsAddUserResponse } from "../models";
+import { AddGroupUserRequest, GroupsAddGroupUserOptionalParams, GroupsAddGroupUserResponse } from "../models";
 /** Class containing Groups operations. */
 export declare class GroupsImpl implements Groups {
     private readonly client;
@@ -15,6 +15,6 @@ export declare class GroupsImpl implements Groups {
      * @param requestBody Request body for adding user to a group
      * @param options The options parameters.
      */
-    addUser(groupId: string, requestBody: AddGroupUserRequest, options?: GroupsAddUserOptionalParams): Promise<GroupsAddUserResponse>;
+    addGroupUser(groupId: string, requestBody: AddGroupUserRequest, options?: GroupsAddGroupUserOptionalParams): Promise<GroupsAddGroupUserResponse>;
 }
 //# sourceMappingURL=groups.d.ts.map

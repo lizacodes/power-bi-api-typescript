@@ -959,15 +959,15 @@ export declare interface Groups {
      * @param requestBody Request body for adding user to a group
      * @param options The options parameters.
      */
-    addUser(groupId: string, requestBody: AddGroupUserRequest, options?: GroupsAddUserOptionalParams): Promise<GroupsAddUserResponse>;
+    addGroupUser(groupId: string, requestBody: AddGroupUserRequest, options?: GroupsAddGroupUserOptionalParams): Promise<GroupsAddGroupUserResponse>;
 }
 
 /** Optional parameters. */
-export declare interface GroupsAddUserOptionalParams extends coreClient.OperationOptions {
+export declare interface GroupsAddGroupUserOptionalParams extends coreClient.OperationOptions {
 }
 
-/** Contains response data for the addUser operation. */
-export declare type GroupsAddUserResponse = Record<string, unknown>;
+/** Contains response data for the addGroupUser operation. */
+export declare type GroupsAddGroupUserResponse = Record<string, unknown>;
 
 /** The import object */
 export declare interface Import {
@@ -1265,15 +1265,15 @@ export declare interface Profiles {
      * @param requestBody The request body
      * @param options The options parameters.
      */
-    postProfiles(requestBody: CreateOrUpdateProfileRequest, options?: ProfilesPostProfilesOptionalParams): Promise<ProfilesPostProfilesResponse>;
+    createProfile(requestBody: CreateOrUpdateProfileRequest, options?: ProfilesCreateProfileOptionalParams): Promise<ProfilesCreateProfileResponse>;
 }
 
 /** Optional parameters. */
-export declare interface ProfilesPostProfilesOptionalParams extends coreClient.OperationOptions {
+export declare interface ProfilesCreateProfileOptionalParams extends coreClient.OperationOptions {
 }
 
-/** Contains response data for the postProfiles operation. */
-export declare type ProfilesPostProfilesResponse = ServicePrincipalProfile;
+/** Contains response data for the createProfile operation. */
+export declare type ProfilesCreateProfileResponse = ServicePrincipalProfile;
 
 /** A Publish Datasource To Gateway Request */
 export declare interface PublishDatasourceToGatewayRequest {

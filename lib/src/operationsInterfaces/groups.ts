@@ -1,7 +1,7 @@
 import {
   AddGroupUserRequest,
-  GroupsAddUserOptionalParams,
-  GroupsAddUserResponse
+  GroupsAddGroupUserOptionalParams,
+  GroupsAddGroupUserResponse
 } from "../models";
 
 /** Interface representing a Groups. */
@@ -12,9 +12,9 @@ export interface Groups {
    * @param requestBody Request body for adding user to a group
    * @param options The options parameters.
    */
-  addUser(
+  addGroupUser(
     groupId: string,
     requestBody: AddGroupUserRequest,
-    options?: GroupsAddUserOptionalParams
-  ): Promise<GroupsAddUserResponse>;
+    options?: GroupsAddGroupUserOptionalParams
+  ): Promise<GroupsAddGroupUserResponse>;
 }

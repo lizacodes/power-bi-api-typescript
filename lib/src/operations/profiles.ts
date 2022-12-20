@@ -5,8 +5,8 @@ import * as Parameters from "../models/parameters";
 import { PowerBiClient } from "../powerBiClient";
 import {
   CreateOrUpdateProfileRequest,
-  ProfilesPostProfilesOptionalParams,
-  ProfilesPostProfilesResponse
+  ProfilesCreateProfileOptionalParams,
+  ProfilesCreateProfileResponse
 } from "../models";
 
 /** Class containing Profiles operations. */
@@ -26,20 +26,20 @@ export class ProfilesImpl implements Profiles {
    * @param requestBody The request body
    * @param options The options parameters.
    */
-  postProfiles(
+  createProfile(
     requestBody: CreateOrUpdateProfileRequest,
-    options?: ProfilesPostProfilesOptionalParams
-  ): Promise<ProfilesPostProfilesResponse> {
+    options?: ProfilesCreateProfileOptionalParams
+  ): Promise<ProfilesCreateProfileResponse> {
     return this.client.sendOperationRequest(
       { requestBody, options },
-      postProfilesOperationSpec
+      createProfileOperationSpec
     );
   }
 }
 // Operation Specifications
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
-const postProfilesOperationSpec: coreClient.OperationSpec = {
+const createProfileOperationSpec: coreClient.OperationSpec = {
   path: "/profiles",
   httpMethod: "POST",
   responses: {

@@ -519,11 +519,11 @@ export interface GetGroupsOptionalParams extends coreClient.OperationOptions {}
 export type GetGroupsResponse = ODataResponseListGroup;
 
 /** Optional parameters. */
-export interface ProfilesPostProfilesOptionalParams
+export interface ProfilesCreateProfileOptionalParams
   extends coreClient.OperationOptions {}
 
-/** Contains response data for the postProfiles operation. */
-export type ProfilesPostProfilesResponse = ServicePrincipalProfile;
+/** Contains response data for the createProfile operation. */
+export type ProfilesCreateProfileResponse = ServicePrincipalProfile;
 
 /** Optional parameters. */
 export interface DatasetsGetDatasetsOptionalParams
@@ -1029,11 +1029,11 @@ export interface TilesGenerateTokenInGroupOptionalParams
 export type TilesGenerateTokenInGroupResponse = EmbedToken;
 
 /** Optional parameters. */
-export interface GroupsAddUserOptionalParams
+export interface GroupsAddGroupUserOptionalParams
   extends coreClient.OperationOptions {}
 
-/** Contains response data for the addUser operation. */
-export type GroupsAddUserResponse = Record<string, unknown>;
+/** Contains response data for the addGroupUser operation. */
+export type GroupsAddGroupUserResponse = Record<string, unknown>;
 
 /** Optional parameters. */
 export interface PowerBiClientOptionalParams

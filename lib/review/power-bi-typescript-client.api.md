@@ -571,15 +571,15 @@ export interface Group {
 
 // @public
 export interface Groups {
-    addUser(groupId: string, requestBody: AddGroupUserRequest, options?: GroupsAddUserOptionalParams): Promise<GroupsAddUserResponse>;
+    addGroupUser(groupId: string, requestBody: AddGroupUserRequest, options?: GroupsAddGroupUserOptionalParams): Promise<GroupsAddGroupUserResponse>;
 }
 
 // @public
-export interface GroupsAddUserOptionalParams extends coreClient.OperationOptions {
+export interface GroupsAddGroupUserOptionalParams extends coreClient.OperationOptions {
 }
 
 // @public
-export type GroupsAddUserResponse = Record<string, unknown>;
+export type GroupsAddGroupUserResponse = Record<string, unknown>;
 
 // @public
 export interface Import {
@@ -790,15 +790,15 @@ export interface PowerBiClientOptionalParams extends coreClient.ServiceClientOpt
 
 // @public
 export interface Profiles {
-    postProfiles(requestBody: CreateOrUpdateProfileRequest, options?: ProfilesPostProfilesOptionalParams): Promise<ProfilesPostProfilesResponse>;
+    createProfile(requestBody: CreateOrUpdateProfileRequest, options?: ProfilesCreateProfileOptionalParams): Promise<ProfilesCreateProfileResponse>;
 }
 
 // @public
-export interface ProfilesPostProfilesOptionalParams extends coreClient.OperationOptions {
+export interface ProfilesCreateProfileOptionalParams extends coreClient.OperationOptions {
 }
 
 // @public
-export type ProfilesPostProfilesResponse = ServicePrincipalProfile;
+export type ProfilesCreateProfileResponse = ServicePrincipalProfile;
 
 // @public
 export interface PublishDatasourceToGatewayRequest {

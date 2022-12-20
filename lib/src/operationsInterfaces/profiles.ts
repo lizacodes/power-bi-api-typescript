@@ -1,7 +1,7 @@
 import {
   CreateOrUpdateProfileRequest,
-  ProfilesPostProfilesOptionalParams,
-  ProfilesPostProfilesResponse
+  ProfilesCreateProfileOptionalParams,
+  ProfilesCreateProfileResponse
 } from "../models";
 
 /** Interface representing a Profiles. */
@@ -11,8 +11,8 @@ export interface Profiles {
    * @param requestBody The request body
    * @param options The options parameters.
    */
-  postProfiles(
+  createProfile(
     requestBody: CreateOrUpdateProfileRequest,
-    options?: ProfilesPostProfilesOptionalParams
-  ): Promise<ProfilesPostProfilesResponse>;
+    options?: ProfilesCreateProfileOptionalParams
+  ): Promise<ProfilesCreateProfileResponse>;
 }
