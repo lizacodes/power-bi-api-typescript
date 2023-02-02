@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Autorest-generated client library for Power BI REST API",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "autorest": "autorest autorest-config.json"
   },
