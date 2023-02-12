@@ -2,7 +2,9 @@
   "name": "power-bi-api-typescript",
   "version": "1.0.0",
   "description": "Autorest-generated client library for Power BI REST API",
-  "main": "index.js",
+  "main": "./lib/src/index.ts",
+  "module": "./lib/dist-esm/index.js",
+  "types": "./lib/types/power-bi-typescript-client.d.ts",
   "scripts": {
     "autorest": "autorest autorest-config.json"
   },
